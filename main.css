@@ -1,0 +1,224 @@
+/*
+ * 
+ * 
+- Very dark desaturated blue: hsl(238, 29%, 16%)
+- Soft red: hsl(14, 88%, 65%)
+
+#### Gradient
+
+Background gradient:
+
+- Soft violet: hsl(273, 75%, 66%)
+- Soft blue: hsl(240, 73%, 65%)
+
+### Neutral
+
+#### Text
+
+- Very dark grayish blue: hsl(237, 12%, 33%)
+- Dark grayish blue: hsl(240, 6%, 50%)
+
+#### Dividers
+
+- Light grayish blue: hsl(240, 5%, 91%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 12px
+
+### Font
+
+- Family: [Kumbh Sans](https://fonts.google.com/specimen/Kumbh+Sans)
+- Weights: 400, 700
+* 
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+  
+
+:root{
+	--vd-blue: hsl(238, 29%, 16%);
+	--s-red: hsl(14, 88%, 65%);
+	
+	--vdg-blue: hsl(237, 12%, 33%);
+	--dg-blue: hsl(240, 6%, 50%);
+	
+	--lg-blue: hsl(240, 5%, 91%);
+	
+	
+}
+
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap ;
+	min-height: 100vh;
+	font-family:'Kumbh Sans';
+	background: linear-gradient(to bottom,hsl(273, 75%, 66%),hsl(240, 73%, 65%));
+	font-size:12px;
+}
+
+.content{
+	
+}
+
+main{
+	background-color:white;
+	width:100%;
+	//display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	border-radius:20px;
+	
+}
+
+.break {
+	 flex-basis: 100%;
+	 height: 0;
+}
+
+.accordion{
+	
+	background-color:white;
+}
+
+.accordion_title{
+	border-bottom:1px solid grey;
+	display: grid;
+	grid-template-columns: auto auto;
+}
+
+
+.accordion_body{
+	
+	max-height:0px;
+	overflow:hidden;
+	padding:0px!important;
+	display:hidden;
+	transition:0.5s;
+}
+
+.wrap_ac_content{
+	border-bottom:1px solid grey;
+}
+
+
+.accordion_title:hover{
+	cursor:pointer;
+}
+
+.accordion div {
+	padding:5px;
+}
+
+.arrow{
+	float: right;
+	transform: rotate(90deg);
+}
+
+
+
+
+@media (max-width:700px){
+	main{
+		width: 80%;
+		padding: 5%;
+		padding-bottom: 50px;
+		margin-top: 200px;
+		position: relative;
+	}
+	
+	h1{
+		width: 100%;
+		text-align: center;
+	}
+	
+	.images_large{
+		display:none;
+	}
+	
+	.top_acord{
+		position: absolute;
+		width: 280px;
+		z-index:1;
+		animation-name: up_down;
+		animation-duration: 3.5s;
+		animation-iteration-count: infinite;
+	}
+	
+	.images{
+		
+		//left: 10px;
+		top: -160px;
+		position: relative;
+		height: 90px;
+		margin-left: 0px;
+		align-self: start;
+	}
+	
+	#shadow{
+		top: 140px;
+		position: relative;
+		left: 23px;
+	}
+	
+	
+}
+
+@media (min-width:700px){
+	main{
+		width: 80%;
+		padding: 5%;
+		padding-bottom: 50px;
+		margin-top: 200px;
+		position: relative;
+	}
+	
+	h1{
+		width: 100%;
+		text-align: center;
+	}
+	
+	.images{
+		display:none;
+	}
+	
+	.images_large{
+		display:block;
+	}
+	
+	.top_acord{
+		position: absolute;
+		width: 280px;
+		z-index:1;
+		animation-name: up_down;
+		animation-duration: 3.5s;
+		animation-iteration-count: infinite;
+	}
+	
+	#shadow_big{
+		max-width:465px;
+		margin-top: -415px;
+	}
+	
+	#w_online{
+		max-width:465px;
+	}
+	
+	#box{
+		top: -275px;
+		position: relative;
+	}
+}
+
+
+@keyframes up_down {
+       0%   {top: -5px;}
+  50%  {top: 10px;}
+  100% {top: -5px;}
+}
